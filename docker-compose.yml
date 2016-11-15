@@ -2,10 +2,8 @@ version: '2'
 services:
     web:
         container_name: ng-train-advanced
-        build: .
+        build: ./_exploit
         volumes:
-            - "./src/app:/src/app"
-            - "./src/server:/src/server"
-            - "./src/dist:/src/dist"
+            - "./src:/apps/src"
         ports:
             - "3000:3000"

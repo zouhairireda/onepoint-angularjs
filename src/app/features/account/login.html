@@ -1,0 +1,20 @@
+<!-- TODO TD transclude -->
+
+<header data-ng-controller="HeaderController as headCtl">
+    <!-- TODO replace ng-if by user-is-logged directive -->
+    <div class="account" data-ng-if="headCtl.user" user-is-logged>
+        <span data-ng-bind="name"></span>
+        <a data-ui-sref="/account">Mon compte</a>
+    </div>
+    <a data-ui-sref="/login" data-ng-if="!headCtl.user">Me connecter</a>
+
+</header>
+
+<!-- TODO replace ng-if by user-is-logged directive -->
+<footer data-ng-controller="FooterController as footCtl">
+    <ul>
+        <li data-ng-if="footCtl.user" user-is-logged>Mon compte</li>
+        <li data-ng-if="!footCtl.user" user-is-not-logged>Me connecter</li>
+    </ul>
+
+</header>
