@@ -12,6 +12,7 @@ module.exports = configureWebpack;
 function configureWebpack(app) {
     
     const middleware = webpackMiddleware(compiler, {
+        filename: config.output.filename,
         publicPath: config.output.publicPath,
         contentBase: '../../src',
         stats: {
@@ -25,7 +26,10 @@ function configureWebpack(app) {
     });
 
     app.use(middleware);
-    // app.use(webpackHotMiddleware(compiler));
+    app.use(webpackHotMiddleware(compiler, {
+        log: console.log
+    }));
+
     app.get('*', function response(req, res) {
         res.write(middleware.fileSystem.readFileSync(path.join(__dirname, '../../dist/index.html')));
         res.end();

@@ -1,6 +1,6 @@
 # SG - AngularJS advanced training
 
-## Technical requirements
+## Technical requirements TODO (deprecated)
 
 ### Docker
 Docker environment installed on the computer  
@@ -14,12 +14,27 @@ For every other Operating system please refer to [the official documentation](ht
 If you're using the Docker ToolBox git is already available in the Docker Host.  
 If you have installed Docker on your own you have to install Git as well on your Docker Host.
 
-## Course participant installation instructions
+## Technical requirements TODO (new)
+
+### Node.js
+
+### Git
+
+### IDE
+(Visual Studio Code)
+
+## Course participant installation instructions TODO (rewrite)
 
 This 
 You must meet the technical requirements to follow the following steps
-- Open a new shell on your Docker Host (Docker quick start terminal)
+- Open a new shell
 - Clone the training repository git clone https://gitlab.groupeonepoint.com/cds-bdx/sg-training-angular-advanced.git
 - Move in the working directory `cd sg-training-angular-advanced`
 - Fetch the first chapter branch `git fetch origin firstChapter` (TODO add some bash utility ? Make first chapter as default branch ?)
-- Launch the application `./start.sh`
+- npm install
+- npm start
+
+## Docker VM infos
+IP: 192.168.100.99
+user: docker
+pass: tcuser

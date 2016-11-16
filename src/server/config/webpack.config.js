@@ -4,9 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'eval-source-map',
+    //devtool: debug ? "inline-sourcemap" : null,
     debug: true,
     entry: [
-        // 'webpack-hot-middleware/client?reload=true',
+        'webpack/hot/dev-server',
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true',
         path.join(__dirname, '../../app/main.js')
     ],
 
@@ -24,9 +26,9 @@ module.exports = {
             jQuery: 'jquery',
             $: 'jquery',
             jquery: 'jquery'
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin(),
         // new webpack.optimize.OccurenceOrderPlugin(),
-        // new webpack.HotModuleReplacementPlugin(),
         // new webpack.NoErrorsPlugin(),
         // new webpack.DefinePlugin({
         //     'process.env.NODE_ENV': JSON.stringify('development')

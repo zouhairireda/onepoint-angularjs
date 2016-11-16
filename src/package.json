@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --watch server --watch app -L -e js,html,scss ./server/app.js"
+    "start": "nodemon --watch server -L ./server/app.js"
   },
   "dependencies": {
     "angular": "^1.5.8",

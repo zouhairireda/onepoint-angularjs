@@ -17,4 +17,3 @@ angular
 function onAppRun($log) {
     $log.info('App bootstraped !');
 }
-
