@@ -6,7 +6,7 @@
 Docker environment installed on the computer  
 Training as been writing on a Windows Operating system but intend to be functional on every operating systems that runs Docker. 
 
-To install Docker on Window please follow [this topic](https://docs.docker.com/toolbox/toolbox_install_windows/)
+To install Docker on Window please follow [this topic](https://docs.docker.com/toolbox/toolbox_install_windows/#/step-2-install-docker-toolbox)
 
 For every other Operating system please refer to [the official documentation](https://docs.docker.com/engine/installation/)
 

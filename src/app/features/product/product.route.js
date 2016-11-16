@@ -1,12 +1,12 @@
 'use strict';
 
-export default function ($stateProvider, $urlRouteProvider) {
+export default function configureRoutes ($urlRouterProvider, $stateProvider) {
     console.log('test');
     $stateProvider
         .state('mainLayout.products', {
             url: '/',
             templateUrl: 'features/product/product.html'
-        })
+        });
 
-    $urlRouteProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/');
 }
