@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --watch server --watch webpack.config.js -L ./server/app.js --hot",
+    "start": "nodemon --watch server --watch webpack.config.js -L ./server/main.js",
     "dev": "webpack-dev-server --hot --inline --content-base dist/"
   },
   "dependencies": {
@@ -44,7 +44,6 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
-    "webpack-dev-middleware": "^1.8.4",
-    "webpack-hot-middleware": "^2.13.2"
+    "webpack-dev-server": "^1.16.2"
   }
 }

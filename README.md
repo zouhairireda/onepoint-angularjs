@@ -34,7 +34,8 @@ You must meet the technical requirements to follow the following steps
 - npm install
 - npm start
 
-## Docker VM infos
-IP: 192.168.100.99
-user: docker
-pass: tcuser
+## Server infos
+Development server run on localhost:8080 and proxy the api server running on port 8079
+- http://localhost:8080
+- http://localhost:8080/webpack-dev-server/
+- http://localhost:8079/api

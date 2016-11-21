@@ -1,5 +1,3 @@
-'use strict';
-
 import 'jquery';
 import 'bootstrap-loader';
 import './styles/app.scss';
@@ -10,7 +8,7 @@ import './features/product/product.module.js';
 angular
     .module('shopping', [
         'shopping.layout',
-        'shopping.feature.product',
+        'shopping.feature.product'
     ]);
 
 if (module.hot) {
