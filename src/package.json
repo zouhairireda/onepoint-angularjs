@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon --watch server -L ./server/app.js"
+    "start": "nodemon --watch server --watch webpack.config.js -L ./server/app.js --hot",
+    "dev": "webpack-dev-server --hot --inline --content-base dist/"
   },
   "dependencies": {
     "angular": "^1.5.8",
@@ -15,6 +16,7 @@
     "morgan": "~1.7.0"
   },
   "devDependencies": {
+    "angular-mocks": "^1.5.8",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
@@ -24,9 +26,18 @@
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.22.0",
+    "jasmine-core": "^2.5.2",
     "jquery": "^3.1.1",
     "jscs": "^3.0.7",
     "jscs-loader": "^0.3.0",
+    "karma": "^1.3.0",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "ng-cache-loader": "0.0.21",
+    "ng-describe": "^1.8.0",
     "node-sass": "^3.11.2",
     "resolve-url-loader": "^1.6.0",
     "sass-loader": "^4.0.2",
@@ -34,6 +45,6 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.8.4",
-    "webpack-hot-middleware": "^2.13.0"
+    "webpack-hot-middleware": "^2.13.2"
   }
 }

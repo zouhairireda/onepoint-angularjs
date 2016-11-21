@@ -11,9 +11,8 @@ angular
     .module('shopping', [
         'shopping.layout',
         'shopping.feature.product',
-    ])
-    .run(onAppRun);
+    ]);
 
-function onAppRun($log) {
-    $log.info('App bootstraped !');
+if (module.hot) {
+ module.hot.accept();
 }

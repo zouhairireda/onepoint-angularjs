@@ -1,5 +1,3 @@
-'use strict';
-
 import 'angular-ui-router';
 import angular from 'angular';
 import routes from './product.route.js';

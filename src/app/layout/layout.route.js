@@ -1,8 +1,12 @@
-'use strict';
+const mainLayoutTemplate = require('./mainLayout.html');
 
-export default function ($stateProvider) {
+export default ($stateProvider) => {
+    console.log('test unit bootstrap');
+    console.log('test unit bootstrap');
+    console.log('test unit bootstrap');
+    console.log('test unit bootstrap');
     $stateProvider.state('mainLayout', {
         abstract: true,
-        templateUrl: 'layout/mainLayout.html'
+        template: mainLayoutTemplate
     });
 }

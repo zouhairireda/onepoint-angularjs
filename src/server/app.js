@@ -11,12 +11,12 @@ const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, '../app')));
 
+app.use(express.static(path.join(__dirname, '../app')));
 
 app.use('/api', routes);
 
-require('./config/webpack')(app);
+require('./webpack')(app);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -1,8 +1,5 @@
-'use strict';
 
-import angular from 'angular';
-
-class ProductListController {
+export default class ProductListController {
     constructor() {
 
     }
@@ -15,5 +12,3 @@ class ProductListController {
 
     }
 }
-
-export default ProductListController;
