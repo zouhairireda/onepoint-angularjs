@@ -11,6 +11,7 @@ angular
         'shopping.feature.product'
     ]);
 
+// Authorise WebPack Hot module replacement
 if (module.hot) {
  module.hot.accept();
 }

@@ -31,19 +31,12 @@ module.exports = {
             $: 'jquery',
             jquery: 'jquery'
         })
-        // new webpack.optimize.OccurenceOrderPlugin(),
-        // new webpack.NoErrorsPlugin(),
         // new webpack.DefinePlugin({
         //     'process.env.NODE_ENV': JSON.stringify('development')
         // })
     ],
 
     module: {
-        // preLoaders: [{
-        //   test:    /\.js$/,
-        //   exclude: /node_modules/,
-        //   loader: 'jscs-loader'
-        // }],
         loaders: [
             { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: ['es2015'] } },
             { test: /\.scss$/, loaders: ['style', 'css', 'sass'] },

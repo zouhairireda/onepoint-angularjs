@@ -18,6 +18,11 @@ If you have installed Docker on your own you have to install Git as well on your
 
 ### Node.js
 
+### Npm global package
+```
+npm install -g webpack-dev-server karma-cli protractor phantomjs-prebuilt
+```
+
 ### Git
 
 ### IDE
@@ -38,4 +43,11 @@ You must meet the technical requirements to follow the following steps
 Development server run on localhost:8080 and proxy the api server running on port 8079
 - http://localhost:8080
 - http://localhost:8080/webpack-dev-server/
-- http://localhost:8079/api
+- http://localhost:8080/api proxy vers http://localhost:8079/ 
+
+## Launch unit tests
+npm run karma
+
+
+## Launch e2e tests
+

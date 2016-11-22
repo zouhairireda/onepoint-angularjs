@@ -19,12 +19,14 @@ module.exports = (config) => {
     },
     webpack: {
       cache: true,
+      devtool: webpackConfig.devtool,
       module: {
         loaders: webpackConfig.module.loaders
       }
     },
     webpackMiddleware: {
       stats: 'errors-only'
+      // TODO use below to make webpack more verbose
       // stats: {
       //   colors: true
       // }

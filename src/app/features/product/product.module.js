@@ -6,5 +6,5 @@ import ProductListController from './productList.controller.js';
 angular
     .module('shopping.feature.product', ['ui.router'])
     .config(routes)
-    .controller('ProductListController', ProductListController)
+    .controller('ProductListController', ProductListController);
 

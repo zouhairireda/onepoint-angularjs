@@ -12,4 +12,4 @@ module.exports = (PORT) => {
     }
   });
   server.listen(PORT, 'localhost');
-}
+};

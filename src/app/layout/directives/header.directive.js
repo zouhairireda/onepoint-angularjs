@@ -11,6 +11,7 @@ export default class HeaderDirective {
 
 class HeaderController {
     constructor() {
+
     }
 
     $onInit() {
