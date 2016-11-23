@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
@@ -8,7 +9,7 @@ module.exports = {
     // devtool: 'inline-sourcemap',
     // devtool: 'cheap-module-source-map',
     entry:[
-        // 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true', 
+        // 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true',
         './app/main.js'
     ],
 
@@ -30,7 +31,8 @@ module.exports = {
             jQuery: 'jquery',
             $: 'jquery',
             jquery: 'jquery'
-        })
+        }),
+        new CopyWebpackPlugin([{ from: 'assets/img', to: 'img' }], {})
         // new webpack.DefinePlugin({
         //     'process.env.NODE_ENV': JSON.stringify('development')
         // })
@@ -43,8 +45,8 @@ module.exports = {
             { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
             { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' },
             { test: /\.html/, exclude: /node_modules/, loader: 'html-loader' },
+            { test: /\.(png|jpg|jpeg|gif)$/, loader: 'file-loader?name=assets/img/img-[hash:6].[ext]' }
             //   {test: /\.s?css$/, loader: 'style!css!sass?includePaths[]=' + bourbon },
-            // { test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/, loader: 'file' }
         ]
     }
 };

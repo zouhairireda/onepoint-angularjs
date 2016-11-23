@@ -4,19 +4,19 @@
 
         <div class="row">
 
-            <div class="col-sm-4 col-lg-4 col-md-4 product" data-ng-repeat="item in [{}, {}, {}, {}, {}, {}]">
+            <div class="col-sm-4 col-lg-4 col-md-4 product" data-ng-repeat="product in productListCtl.products">
                 <div class="thumbnail">
-                    <img src="http://placehold.it/320x150" alt="">
+                    <img data-ng-src="img/{{product.image}}" alt="">
                     <div class="caption">
-                        <h4 class="pull-right">$24.99</h4>
-                        <h4><a href="#">First Product</a></h4>
-                        <p>See more snippets like this online store item at 
+                        <h4 class="pull-right" data-ng-bind="product.price | currency:'€'"></h4>
+                        <h4><a href="#" data-ng-bind="product.title"></a></h4>
+                        <p>See more snippets like this online store item at
                             <a target="_blank" href="#">this link</a>.</p>
                     </div>
                     <div class="ratings">
-                        <p class="pull-right">15 reviews</p>
+                        <p class="pull-right">{{product.review}} reviews</p>
                         <p>
-                            <span data-ng-repeat="item in [{}, {}, {}, {}, {}]" class="glyphicon glyphicon-star"></span>
+                            <span data-ng-repeat="item in productListCtl.range(product.rating)" class="glyphicon glyphicon-star"></span>
                         </p>
                     </div>
                 </div>
