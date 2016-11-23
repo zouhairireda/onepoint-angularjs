@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015"
+    ]
   },
   "scripts": {
     "postinstall": "webdriver-manager update",
@@ -13,6 +15,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-resource": "^1.5.8",
     "angular-ui-router": "^0.3.2",
     "body-parser": "~1.15.1",
     "bootstrap": "^3.3.7",

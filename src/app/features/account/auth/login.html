@@ -1,0 +1,15 @@
+<!-- TODO TD transclude -->
+<form name="loginCtl.loginForm" novalidate data-ng-submit="loginCtl.submit()">
+    <hr>
+        <a data-ng-click="loginCtl.fillForm()">Remplir le formulaire</a>
+    <hr>
+    <div data-shop-form-field data-label="Adresse e-mail">
+        <input type="email" name="email" data-ng-model="loginCtl.user.email">
+    </div>
+    <div data-shop-form-field data-label="Mot de passe">
+        <input type="password" name="password" data-ng-model="loginCtl.user.password">
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-default">Submit</button>
+
+</form>

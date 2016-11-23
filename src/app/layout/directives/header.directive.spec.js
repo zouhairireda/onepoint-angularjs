@@ -3,7 +3,6 @@ import 'angular-mocks';
 import 'ng-describe';
 import '../layout.module.js';
 
-
 describe('Karma test suite validation', () => {
 
     let $http;
