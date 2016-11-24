@@ -1,7 +1,7 @@
 import 'angular-ui-router';
 import angular from 'angular';
 import routes from './product.route.js';
-import ProductListController from './productList.controller.js';
+import ProductListController from './list/productList.controller.js';
 import productRepository from './repository/product.repository.js';
 import ProductService from './service/product.service.js';
 
