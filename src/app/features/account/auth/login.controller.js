@@ -1,6 +1,15 @@
 export default class LoginController {
-  constructor(securityService) {
+  constructor(securityService, $state) {
+    this.securityService = securityService;
+    this.$state = $state;
     this.user = {};
+    this.formErrorMessage = null;
+  }
+
+  $onInit() {
+    if (this.securityService.isLogged()) {
+      this._onSubmitSuccess()
+    }
   }
 
   fillForm() {
@@ -10,7 +19,18 @@ export default class LoginController {
 
   submit() {
     if (this.loginForm.$valid) {
-      console.log(this.user);
+      this.securityService
+        .authenticate(this.user.email, this.user.password)
+        .then(() => this._onSubmitSuccess())
+        .catch((errorCode) => this._onSubmitFailure(errorCode));
     }
+  }
+
+  _onSubmitSuccess() {
+    this.$state.go('mainLayout.account');
+  }
+
+  _onSubmitFailure(errorCode) {
+    this.formErrorMessage = errorCode === 404 ? 'User not found' : 'Unexpected error';
   }
 }

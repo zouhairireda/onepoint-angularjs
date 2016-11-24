@@ -5,6 +5,12 @@ export default ($urlRouterProvider, $stateProvider) => {
       controller: 'LoginController',
       controllerAs: 'loginCtl',
       template: require('./auth/login.html')
+    })
+    .state('mainLayout.account', {
+      url: '/account',
+      controller: 'AccountController',
+      controllerAs: 'accountCtl',
+      template: require('./home/account.html')
     });
 
   $urlRouterProvider.otherwise('/');

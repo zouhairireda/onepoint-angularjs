@@ -5,7 +5,10 @@ import HeaderDirective from './directives/header.directive.js';
 import FooterDirective from './directives/footer.directive.js';
 
 angular
-    .module('shopping.layout', ['ui.router'])
+    .module('shopping.layout', [
+      'ui.router',
+      'shopping.services.security'
+    ])
     .config(routes)
     .directive('header', () => new HeaderDirective)
     .directive('footer', () => new FooterDirective);
