@@ -1,5 +1,6 @@
 import angular from 'angular';
 import 'angular-ui-router';
+import '../common/services/security/security.module';
 import routes from './layout.route.js';
 import HeaderDirective from './directives/header.directive.js';
 import FooterDirective from './directives/footer.directive.js';
