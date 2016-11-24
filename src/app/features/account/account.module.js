@@ -1,23 +1,23 @@
-import 'angular-ui-router';
-import 'angular-resource';
-import '../../common/directives/form.module';
 import angular from 'angular';
+import 'angular-ui-router';
+import '../../common/services/security/security.module';
+import '../../common/directives/form.module';
 import routes from './account.route.js';
 import LoginController from './auth/login.controller';
 import LogoutController from './auth/logout.controller';
-import SecurityService from './services/security.service';
-import userRepository from './repository/user.repository';
+import AccountController from './home/account.controller';
 
 angular
     .module('shopping.feature.account', [
       'ui.router',
       'ngResource',
-      'shopping.directives.form'
+      'ngStorage',
+      'shopping.directives.form',
+      'shopping.services.security'
     ])
     .config(routes)
-    .service('securityService', SecurityService)
-    .factory('userRepository', userRepository)
     .controller('LoginController', LoginController)
+    .controller('AccountController', AccountController)
     .controller('LogoutController', LogoutController);
 
 

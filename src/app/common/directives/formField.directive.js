@@ -1,15 +1,13 @@
 const formFieldTemplate = require('./formField.html');
 
-export default class ShopFormFieldDirective {
-  constructor() {
-    this.restrict = 'A';
-    this.transclude = true;
-    this.template = formFieldTemplate;
-    this.controller = FormFieldController;
-    this.controllerAs = 'fieldCtl';
-    this.scope = true;
-  }
-}
+export default () => ({
+  restrict: 'A',
+  transclude: true,
+  template: formFieldTemplate,
+  controller: FormFieldController,
+  controllerAs: 'fieldCtl',
+  scope: true
+});
 
 class FormFieldController {
 
@@ -34,7 +32,7 @@ class FormFieldController {
 
   _initInputElement() {
     this.$transclude((clone) => {
-      this.$element.append(clone);
+      this.$element.find('div').append(clone);
       this.inputElement = this.$element.find('input');
       if (!this.inputElement.length) {
         throw new Error('No input element provided in directive body');
