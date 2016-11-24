@@ -8,8 +8,11 @@ describe('Home Page:', () => {
   it('should display products', testDisplayProduct);
 
   function testDisplayProduct() {
-    var productList = element.all(by.css('.main-container .product'));
-    expect(productList.count()).toEqual(6);
+
+    page.getProducts().count()
+      .then((productCount) => {
+        expect(productCount).toEqual(7);
+      });
   }
 
 });
