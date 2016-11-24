@@ -1,4 +1,4 @@
-import Product from './product.entity.js';
+import Product from '../model/product.entity.js';
 
 export default class ProductService {
     constructor(productRepository) {
