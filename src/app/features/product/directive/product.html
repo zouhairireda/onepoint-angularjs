@@ -9,7 +9,7 @@
     <div class="ratings">
         <p class="pull-right">{{prodCtl.product.review}} reviews</p>
         <p>
-            <span data-ng-repeat="item in prodCtl.range(prodCtl.product.rating)"
+            <span data-ng-repeat="item in prodCtl.range(prodCtl.product.rating) track by $index"
                   class="glyphicon glyphicon-star"></span>
         </p>
     </div>
