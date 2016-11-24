@@ -30,7 +30,9 @@ module.exports = {
         new webpack.ProvidePlugin({
             jQuery: 'jquery',
             $: 'jquery',
-            jquery: 'jquery'
+            jquery: 'jquery',
+            'window.jQuery': 'jquery',
+            'window.$': 'jquery'
         }),
         new CopyWebpackPlugin([{ from: 'assets/img', to: 'img' }], {})
         // new webpack.DefinePlugin({
