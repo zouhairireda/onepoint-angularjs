@@ -1,6 +1,6 @@
 import angular from 'angular';
-import ShopFormFieldDirective from './formField.directive';
+import shopFormFieldDirective from './formField.directive';
 
 angular
   .module('shopping.directives.form', [])
-  .directive('shopFormField', () => new ShopFormFieldDirective);
+  .directive('shopFormField', shopFormFieldDirective);

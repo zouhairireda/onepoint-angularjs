@@ -1,13 +1,11 @@
 const headerTemplate = require('./header.html');
 
-export default class HeaderDirective {
-  constructor() {
-    this.restrict = 'E';
-    this.template = headerTemplate;
-    this.controller = HeaderController;
-    this.controllerAs = 'headCtl';
-  }
-}
+export default () => ({
+  restrict: 'E',
+  template: headerTemplate,
+  controller: HeaderController,
+  controllerAs: 'headCtl'
+});
 
 class HeaderController {
   constructor($scope, securityService, $location) {
@@ -29,7 +27,6 @@ class HeaderController {
   }
 
   _updateUser(user) {
-    console.log(user);
     this.user = user;
   }
 
