@@ -15,12 +15,4 @@ export default class ProductListController {
                 this.products = products;
             });
     }
-
-    range(count) {
-        let ratings = [];
-        for (let i = 0; i < count; i++) {
-            ratings.push(i)
-        }
-        return ratings;
-    }
 }

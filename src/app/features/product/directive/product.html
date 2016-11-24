@@ -1,0 +1,16 @@
+<div class="thumbnail">
+    <img data-ng-src="img/{{prodCtl.product.image}}" alt="">
+    <div class="caption">
+        <h4 class="pull-right" data-ng-bind="prodCtl.product.price | currency:'€'"></h4>
+        <h4><a href="#" data-ng-bind="prodCtl.product.title"></a></h4>
+        <p>See more snippets like this online store item at
+            <a target="_blank" href="#">this link</a>.</p>
+    </div>
+    <div class="ratings">
+        <p class="pull-right">{{prodCtl.product.review}} reviews</p>
+        <p>
+            <span data-ng-repeat="item in prodCtl.range(prodCtl.product.rating)"
+                  class="glyphicon glyphicon-star"></span>
+        </p>
+    </div>
+</div>

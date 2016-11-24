@@ -4,23 +4,11 @@
 
         <div class="row">
 
-            <div class="col-sm-4 col-lg-4 col-md-4 product" data-ng-repeat="product in productListCtl.products">
-                <div class="thumbnail">
-                    <img data-ng-src="img/{{product.image}}" alt="">
-                    <div class="caption">
-                        <h4 class="pull-right" data-ng-bind="product.price | currency:'€'"></h4>
-                        <h4><a href="#" data-ng-bind="product.title"></a></h4>
-                        <p>See more snippets like this online store item at
-                            <a target="_blank" href="#">this link</a>.</p>
-                    </div>
-                    <div class="ratings">
-                        <p class="pull-right">{{product.review}} reviews</p>
-                        <p>
-                            <span data-ng-repeat="item in productListCtl.range(product.rating)" class="glyphicon glyphicon-star"></span>
-                        </p>
-                    </div>
-                </div>
+            <div class="col-sm-4 col-lg-4 col-md-4 product"
+                 data-ng-repeat="product in productListCtl.products">
+                <product data="product"></product>
             </div>
+
         </div>
     </div>
 </div>
