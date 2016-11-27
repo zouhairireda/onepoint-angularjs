@@ -11,10 +11,13 @@ export default () => ({
 
 class FormFieldController {
 
-  constructor($element, $attrs, $transclude) {
+  constructor($element, $attrs, $transclude, $interpolate, $scope, $sce) {
     this.$element = $element;
     this.$attrs = $attrs;
     this.$transclude = $transclude;
+    this.$interpolate = $interpolate;
+    this.$scope = $scope;
+    this.$sce = $sce;
     this.id = null;
   }
 
@@ -27,10 +30,15 @@ class FormFieldController {
     if (angular.isUndefined(this.$attrs['label'])) {
       throw new Error('Label attribute is mandatory');
     }
-    this.label = this.$attrs['label'];
+    this.label = this.$sce.trustAsHtml(this.$interpolate(this.$attrs['label'])(this.$scope));
   }
 
   _initInputElement() {
+    this._addInputElement();
+    this._registerUntouchedEvent();
+  }
+
+  _addInputElement() {
     this.$transclude((clone) => {
       this.$element.find('div').append(clone);
       this.inputElement = this.$element.find('input');
@@ -38,6 +46,12 @@ class FormFieldController {
         throw new Error('No input element provided in directive body');
       }
       this._initId();
+    });
+  }
+
+  _registerUntouchedEvent() {
+    this.inputElement.on('click', () => {
+      this.$scope.$apply(() => this.inputElement.controller('ngModel').$setUntouched());
     });
   }
 
