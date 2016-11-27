@@ -1,16 +1,26 @@
 import 'angular-ui-router';
+import 'angular-resource';
 import angular from 'angular';
-import routes from './product.route.js';
+import '../../common/services/config/config.module';
 import '../../common/directives/magnific-popup.module';
-import ProductListController from './list/productList.controller.js';
-import productRepository from './repository/product.repository.js';
-import ProductService from './service/product.service.js';
-import productDirective from './directive/product.directive.js';
+
+import routes from './product.route';
+import configLoader from './product.config';
+import ProductListController from './list/productList.controller';
+import productRepository from './repository/product.repository';
+import ProductService from './service/product.service';
+import productDirective from './directive/product.directive';
 
 angular
-    .module('shopping.feature.product', ['ui.router', 'shopping.common.magnificPopup'])
-    .config(routes)
-    .controller('ProductListController', ProductListController)
-    .factory('productRepository', productRepository)
-    .service('productService', ProductService)
-    .directive('product', productDirective);
+  .module('shopping.feature.product', [
+    'ui.router',
+    'ngResource',
+    'shopping.services.config',
+    'shopping.common.magnificPopup'
+  ])
+  .config(routes)
+  .config(configLoader)
+  .controller('ProductListController', ProductListController)
+  .factory('productRepository', productRepository)
+  .service('productService', ProductService)
+  .directive('product', productDirective);
