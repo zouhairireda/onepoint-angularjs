@@ -1,11 +1,12 @@
 
 export default class ProductListController {
-    constructor(productService) {
+    constructor(productService, shopConfigService) {
         this.productService = productService;
+        this.configService = shopConfigService;
     }
 
     $onInit() {
-        this.getProducts();
+        this.getProducts(this.configService.get('listProductPaginate', 'product'));
     }
 
     getProducts() {
