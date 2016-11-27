@@ -1,1 +1,73 @@
-<pre>{{accountCtl.user | json}}</pre>
+<ul class="nav nav-tabs">
+  <li data-ng-class="{'active': accountCtl.selectedMenu == 'profil'}"><a
+      data-ng-click="accountCtl.selectedMenu = 'profil'">Mon profile</a>
+  </li>
+  <li data-ng-class="{'active': accountCtl.selectedMenu == 'password'}"><a
+      data-ng-click="accountCtl.selectedMenu = 'password'">Changer de mot
+    de passe</a></li>
+  <li data-ng-class="{'active': accountCtl.selectedMenu == 'orders'}"><a
+      data-ng-click="accountCtl.selectedMenu = 'orders'">Mes achats</a>
+  </li>
+</ul>
+
+<div class="panel panel-default" data-ng-show="accountCtl.selectedMenu == 'profil'">
+  <div class="panel-heading">Mon profile</div>
+  <div class="panel-body">
+    <pre>{{accountCtl.user | json}}</pre>
+  </div>
+</div>
+
+<div class="panel panel-default" data-ng-show="accountCtl.selectedMenu == 'password'">
+  <div class="panel-heading">Changer de mot de passe</div>
+  <div class="panel-body">
+    <form name="accountCtl.passwordModel.form" data-ng-submit="accountCtl.changePassword()" novalidate>
+      <div class="alert alert-success" data-ng-show="accountCtl.passwordModel.success">
+        Mot de passe mis à jour
+      </div>
+      <div data-shop-form-field data-label="Mot de passe actuel">
+        <input type="password" name="password" data-ng-model="accountCtl.passwordModel.password" required>
+        <div class="error"
+             data-ng-show="accountCtl.passwordModel.form.password.$invalid && accountCtl.passwordModel.form.password.$touched">
+          Ce champ n'est pas valide
+        </div>
+      </div>
+      <div data-shop-form-field data-label="Nouveau mot de passe">
+        <input type="password" name="newPassword"
+               shop-password-complexity="{minLength: 8, shouldHaveNumber: true, shouldHaveSpecialChar: true}"
+               data-ng-model="accountCtl.passwordModel.newPassword" required>
+        <div class="error"
+             data-ng-show="accountCtl.passwordModel.form.newPassword.$invalid && accountCtl.passwordModel.form.newPassword.$touched">
+          Ce champ n'est pas valide
+        </div>
+        <div class="error"
+             data-ng-show="accountCtl.passwordModel.form.confirmPassword.$error.shopPasswordComplexity && accountCtl.passwordModel.form.confirmPassword.$touched">
+          Le mot de passe doit contenir au moins 8 caractères et contenir au moins un chiffre et un caractère spéciale
+        </div>
+      </div>
+      <div data-shop-form-field data-label="Confirmation du mot de passe">
+        <input type="password" name="confirmPassword"
+               shop-password-match="accountCtl.passwordModel.newPassword"
+               data-ng-model="accountCtl.passwordModel.confirmPassword" required>
+        <div class="error"
+             data-ng-show="accountCtl.passwordModel.form.confirmPassword.$error.required && accountCtl.passwordModel.form.confirmPassword.$touched">
+          Ce champ n'est pas valide
+        </div>
+        <div class="error"
+             data-ng-show="accountCtl.passwordModel.form.confirmPassword.$error.shopPasswordMatch && accountCtl.passwordModel.form.confirmPassword.$touched">
+          Les mots de passes sont différents
+        </div>
+      </div>
+      <hr>
+      <button type="submit" data-ng-disabled="accountCtl.passwordModel.form.$invalid" class="btn btn-default">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="panel panel-default" data-ng-show="accountCtl.selectedMenu == 'orders'">
+  <div class="panel-heading">Mes achats</div>
+  <div class="panel-body">
+    ...
+  </div>
+</div>

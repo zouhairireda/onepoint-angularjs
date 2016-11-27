@@ -4,15 +4,17 @@ export default class AccountController {
     this.securityService = securityService;
     this.$q = $q;
     this.$location = $location;
+    this.selectedMenu = 'profil';
+    this.passwordModel = new ChangePasswordModel();
   }
 
   $onInit() {
-    this.checkAccess()
-      .then(() => this.fetchUser())
-      .catch(() => this.onInitError());
+    this._checkAccess()
+      .then(() => this._fetchUser())
+      .catch(() => this._onInitError());
   }
 
-  checkAccess() {
+  _checkAccess() {
     return this.$q((resolve, reject) => {
       if (!this.securityService.isLogged()) {
         reject();
@@ -22,11 +24,39 @@ export default class AccountController {
     });
   }
 
-  fetchUser() {
-    this.user = this.securityService.connectedUser;
+  _fetchUser() {
+    this.user = this.securityService.connectedUser();
   }
 
-  onInitError() {
+  _onInitError() {
     this.$location.path('/');
+  }
+
+  changePassword() {
+    if (this.passwordModel.form.$valid) {
+      this.securityService.changePassword(this.passwordModel.newPassword)
+        .then(() => {
+          this.passwordModel.reset();
+          this.passwordModel.success = true;
+        });
+    }
+  }
+}
+
+class ChangePasswordModel {
+  constructor() {
+    this.form = null;
+    this.success = false;
+    this.reset();
+  }
+
+  reset() {
+    this.password = null;
+    this.newPassword = null;
+    this.confirmPassword = null;
+    if (this.form) {
+      this.form.$setPristine();
+      this.form.$setUntouched();
+    }
   }
 }
