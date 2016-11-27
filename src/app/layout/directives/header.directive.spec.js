@@ -1,25 +1,38 @@
+import angular from 'angular';
 import '../layout.module.js';
 
-describe('Karma test suite validation', () => {
+// Standard test syntax
+describe('shopping.layout: HeaderDirective', () => {
 
-    let $http;
+  let $rootScope;
+  let $compile;
+  beforeEach(angular.mock.module('shopping.layout'));
+  beforeEach(angular.mock.inject(function(_$compile_, _$rootScope_) {
+    $compile = _$compile_;
+    $rootScope = _$rootScope_;
+  }));
 
-    beforeEach(angular.mock.module('shopping.layout'));
+  it('should contain main menu', () => {
+    // having
+    let template = angular.element('<header></header>');
 
-    beforeEach(angular.mock.inject(function(_$http_) {
-        $http = _$http_;
-    }));
+    // when
+    let element = $compile(template)($rootScope);
 
-    it('should work', () => {
-        expect(true).toEqual(true);
-    });
+    // then
+    expect(element.find('nav').length > 0).toEqual(true);
+  });
 });
 
+// ngDescribe test syntax
 ngDescribe({
-    modules: 'shopping.layout',
-    tests: function ($http) {
-        it('finally a test', () => {
-            expect(true).toEqual(true);
-        });
-    }
+  name: 'shopping.layout: HeaderDirective',
+  modules: 'shopping.layout',
+  element: '<header></header>',
+  tests: function(deps) {
+    it('should contain main menu', () => {
+      // then
+      expect(deps.element.find('nav').length > 0).toEqual(true);
+    });
+  }
 });
