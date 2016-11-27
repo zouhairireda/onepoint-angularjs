@@ -2,7 +2,6 @@ import 'angular-ui-router';
 import 'angular-resource';
 import angular from 'angular';
 import '../../common/services/config/config.module';
-import '../../common/directives/magnific-popup.module';
 
 import routes from './product.route';
 import configLoader from './product.config';
@@ -15,8 +14,7 @@ angular
   .module('shopping.feature.product', [
     'ui.router',
     'ngResource',
-    'shopping.services.config',
-    'shopping.common.magnificPopup'
+    'shopping.services.config'
   ])
   .config(routes)
   .config(configLoader)
