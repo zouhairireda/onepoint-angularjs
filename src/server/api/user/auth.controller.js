@@ -1,6 +1,7 @@
 module.exports = {
   loginAction,
-  logoutAction
+  logoutAction,
+  passwordAction
 };
 
 const user = {
@@ -19,5 +20,9 @@ function loginAction(req, res, next) {
 }
 
 function logoutAction(req, res, next) {
+  res.status(200).end();
+}
+
+function passwordAction(req, res, next) {
   res.status(200).end();
 }

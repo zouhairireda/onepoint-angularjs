@@ -3,7 +3,7 @@ import ProductListPage from './productList.page.js';
 describe('Home Page:', () => {
 
   let page;
-  beforeEach(() => page = new ProductListPage('/#/'));
+  beforeEach(() => page = new ProductListPage());
 
   it('should display products', testDisplayProduct);
 
@@ -11,8 +11,10 @@ describe('Home Page:', () => {
 
     page.getProducts().count()
       .then((productCount) => {
-        expect(productCount).toEqual(7);
+        expect(productCount > 0).toBe(true);
       });
   }
 
 });
+
+

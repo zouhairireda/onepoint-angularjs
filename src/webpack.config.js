@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-    devtool: 'source-map',
+    devtool: 'eval-source-map',
     // devtool: 'eval-source-map',
     // devtool: 'inline-sourcemap',
     // devtool: 'cheap-module-source-map',

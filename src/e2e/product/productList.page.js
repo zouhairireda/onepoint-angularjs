@@ -1,8 +1,8 @@
 import BasePage from '../base.page';
 
-export default class extends BasePage {
-  constructor(url) {
-    browser.manage().timeouts().pageLoadTimeout(10000);
+const url = '#/';
+export default class ProductListPage extends BasePage {
+  constructor() {
     super(url);
   }
 
@@ -10,3 +10,4 @@ export default class extends BasePage {
     return element.all(by.css('.main-container product'))
   }
 }
+

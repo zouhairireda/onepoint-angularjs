@@ -28,6 +28,10 @@ npm install -g webpack-dev-server karma-cli protractor phantomjs-prebuilt
 ### IDE
 (Visual Studio Code)
 
+### Chrome
+Installation of Chrome browser
+Add Chrome bin in the PATH
+
 ## Course participant installation instructions TODO (rewrite)
 
 This 

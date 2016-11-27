@@ -1,46 +1,35 @@
 let webpackConfig = require('./webpack.config.js');
-webpackConfig.entry = [];
 
 module.exports = (config) => {
   config.set({
     basePath: '',
     colors: true,
-    autoWatch: false,
-    singleRun: true,
+    autoWatch: true,
+    singleRun: false,
     logLevel: config.LOG_INFO,
     frameworks: ['jasmine'],
     reporters: ['progress'],
     browsers: ['PhantomJS'],
     files: [
-      'app/**/*.spec.js'
+      'app/main.test.js'
     ],
+    // Define entry points for tests
     preprocessors: {
-      'app/**/*.spec.js': ['webpack']
+      'app/main.test.js': ['webpack', 'sourcemap']
     },
+    // karma-webpack plugin config
     webpack: {
-      cache: true,
-      devtool: webpackConfig.devtool,
+      devtool: 'inline-source-map',
       module: {
         loaders: webpackConfig.module.loaders
       }
     },
     webpackMiddleware: {
       stats: 'errors-only'
-      // TODO use below to make webpack more verbose
+      // Uncomment below to make webpack more verbose
       // stats: {
       //   colors: true
       // }
-    },
-
-    // coverageReporter: {
-    //   dir: 'coverage/',
-    //   subdir: '.',
-    //   reporters: [
-    //     {type: 'cobertura', file: 'cobertura.xml'},
-    //     {type: 'text', file: 'text.txt'},
-    //     {type: 'text-summary', file: 'text-summary.txt'},
-    //     {type: 'html'}
-    //   ]
-    // },
+    }
   });
 };

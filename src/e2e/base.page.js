@@ -1,7 +1,9 @@
 export default class BasePage {
-  constructor(url) {
+  constructor(url, loadPage = true) {
     this.url = url;
-    this.load();
+    if (loadPage) {
+      this.load();
+    }
   }
 
   load() {
