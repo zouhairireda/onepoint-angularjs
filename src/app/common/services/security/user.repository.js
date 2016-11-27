@@ -8,5 +8,9 @@ export default ($resource) => $resource(baseUrl, null, {
   logout: {
     url: baseUrl + '/logout',
     method: 'GET'
+  },
+  password: {
+    url: baseUrl + '/password',
+    method: 'POST'
   }
 });

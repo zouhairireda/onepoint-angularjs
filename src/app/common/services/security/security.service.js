@@ -19,6 +19,13 @@ export default class SecurityService {
     });
   }
 
+  changePassword(password) {
+    return this.$q((resolve, reject) => {
+      let payload = {password};
+      this.userRepository.password(payload, () => resolve(), (error) => reject(error));
+    });
+  }
+
   _onAuthSuccess(userInfos, resolve) {
     this.login(new User(userInfos));
     resolve(this.currentUser);
@@ -54,7 +61,7 @@ export default class SecurityService {
   }
 
   autoConnect() {
-    if(this.$localStorage.shoppingUser){
+    if (this.$localStorage.shoppingUser) {
       this.login(this.$localStorage.shoppingUser);
     }
   }
