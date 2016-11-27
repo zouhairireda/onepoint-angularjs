@@ -1,6 +1,6 @@
 import angular from 'angular';
 import 'angular-ui-router';
-import '../../common/services/security/security.module';
+import '../security/security.module';
 import '../../common/services/bootstrap/bootstrap.module';
 import '../../common/directives/form.module';
 
