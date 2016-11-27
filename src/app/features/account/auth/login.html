@@ -1,16 +1,23 @@
 <!-- TODO TD transclude -->
 <form name="loginCtl.loginForm" novalidate data-ng-submit="loginCtl.submit()">
     <hr>
-        <a data-ng-click="loginCtl.fillForm()">Remplir le formulaire</a>
+        <a data-ng-click="loginCtl.fillForm()" class="fill-form">Remplir le formulaire</a>
     <hr>
-    <div data-shop-form-field data-label="Adresse e-mail">
-        <input type="email" name="email" data-ng-model="loginCtl.user.email">
+    <div data-shop-form-field
+         data-label="{{loginCtl.emailField.label}} <i class='glyphicon glyphicon-info-sign' title='{{loginCtl.emailField.help}}'></i>">
+        <input type="email" name="email" data-ng-model="loginCtl.user.email" required>
+        <div class="error" data-ng-show="loginCtl.loginForm.email.$invalid && loginCtl.loginForm.email.$touched">
+            Ce champ n'est pas valide
+        </div>
     </div>
     <div data-shop-form-field data-label="Mot de passe">
-        <input type="password" name="password" data-ng-model="loginCtl.user.password">
+        <input type="password" name="password" data-ng-model="loginCtl.user.password"  required>
+        <div class="error" data-ng-show="loginCtl.loginForm.password.$invalid && loginCtl.loginForm.password.$touched">
+            Ce champ n'est pas valide
+        </div>
     </div>
     <hr>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" data-ng-disabled="loginCtl.loginForm.$invalid" class="btn btn-default">Submit</button>
 
     <div data-ng-show="loginCtl.formErrorMessage">
         <hr>

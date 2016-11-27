@@ -4,6 +4,7 @@ export default class LoginController {
     this.$state = $state;
     this.user = {};
     this.formErrorMessage = null;
+    this.emailField = {label: 'Adresse e-mail', help: 'Ce champ est requis'};
   }
 
   $onInit() {
