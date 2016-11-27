@@ -3,9 +3,9 @@ const productTemplate = require('./product.html');
 export default () => ({
     restrict: 'E',
     template: productTemplate,
-    bindToController: true,
-    scope: {product: '=data'},
+    scope: {product: '<data'},
     controller: ProductController,
+    bindToController: true,
     controllerAs: 'prodCtl',
     compile: compile
 });
@@ -17,5 +17,5 @@ class ProductController {
 }
 
 function compile(element, attrs) {
-    element.find('img').addClass('slider');
+    element.find('img').addClass(attrs['cssClass']);
 }
