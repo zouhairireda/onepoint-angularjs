@@ -4,7 +4,7 @@
         <a data-ng-click="loginCtl.fillForm()" class="fill-form">Remplir le formulaire</a>
     <hr>
     <div data-shop-form-field
-         data-label="{{loginCtl.emailField.label}} <i class='glyphicon glyphicon-info-sign' title='{{loginCtl.emailField.help}}'></i>">
+         data-label="Adresse e-mail">
         <input type="email" name="email" data-ng-model="loginCtl.user.email" required>
         <div class="error" data-ng-show="loginCtl.loginForm.email.$invalid && loginCtl.loginForm.email.$touched">
             Ce champ n'est pas valide

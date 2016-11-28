@@ -30,7 +30,7 @@ class FormFieldController {
     if (angular.isUndefined(this.$attrs['label'])) {
       throw new Error('Label attribute is mandatory');
     }
-    this.label = this.$sce.trustAsHtml(this.$interpolate(this.$attrs['label'])(this.$scope));
+    this.label = this.$attrs['label'];
   }
 
   _initInputElement() {
