@@ -7,7 +7,7 @@ export default class ProductListPage extends BasePage {
   }
 
   getProducts() {
-    return element.all(by.css('.main-container product'))
+    return element.all(by.css('.main-container .product'))
   }
 }
 

@@ -6,7 +6,6 @@ import routes from './product.route';
 import ProductListController from './list/productList.controller';
 import productRepository from './repository/product.repository';
 import ProductService from './service/product.service';
-import productDirective from './directive/product.directive';
 
 angular
   .module('shopping.feature.product', [
@@ -16,5 +15,4 @@ angular
   .config(routes)
   .controller('ProductListController', ProductListController)
   .factory('productRepository', productRepository)
-  .service('productService', ProductService)
-  .directive('product', productDirective);
+  .service('productService', ProductService);

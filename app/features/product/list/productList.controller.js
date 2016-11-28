@@ -15,4 +15,8 @@ export default class ProductListController {
                 this.products = products;
             });
     }
+
+    range(count) {
+        return new Array(count);
+    }
 }
