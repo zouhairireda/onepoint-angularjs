@@ -15,13 +15,13 @@
                 <li>
                     <a data-ui-sref="mainLayout.products">Catalogue</a>
                 </li>
-                <li data-user-is-logged>
+                <li data-ng-if="headCtl.user">
                     <a data-ui-sref="mainLayout.account">Mon compte</a>
                 </li>
-                <li data-user-is-logged>
+                <li data-ng-if="headCtl.user">
                     <a data-ng-click="headCtl.logout()">Se déconnecter</a>
                 </li>
-                <li data-user-is-not-logged>
+                <li data-ng-if="!headCtl.user">
                     <a data-ui-sref="mainLayout.login">Me connecter</a>
                 </li>
             </ul>
