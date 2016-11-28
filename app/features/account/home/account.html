@@ -46,15 +46,10 @@
       </div>
       <div data-shop-form-field data-label="Confirmation du mot de passe">
         <input type="password" name="confirmPassword"
-               shop-password-match="accountCtl.passwordModel.newPassword"
                data-ng-model="accountCtl.passwordModel.confirmPassword" required>
         <div class="error"
              data-ng-show="accountCtl.passwordModel.form.confirmPassword.$error.required && accountCtl.passwordModel.form.confirmPassword.$touched">
           Ce champ n'est pas valide
-        </div>
-        <div class="error"
-             data-ng-show="accountCtl.passwordModel.form.confirmPassword.$error.shopPasswordMatch && accountCtl.passwordModel.form.confirmPassword.$touched">
-          Les mots de passes sont différents
         </div>
       </div>
       <hr>
