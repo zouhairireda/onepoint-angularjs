@@ -34,11 +34,6 @@ class FormFieldController {
   }
 
   _initInputElement() {
-    this._addInputElement();
-    this._registerUntouchedEvent();
-  }
-
-  _addInputElement() {
     this.$transclude((clone) => {
       this.$element.find('div').append(clone);
       this.inputElement = this.$element.find('input');
@@ -46,12 +41,6 @@ class FormFieldController {
         throw new Error('No input element provided in directive body');
       }
       this._initId();
-    });
-  }
-
-  _registerUntouchedEvent() {
-    this.inputElement.on('click', () => {
-      this.$scope.$apply(() => this.inputElement.controller('ngModel').$setUntouched());
     });
   }
 
