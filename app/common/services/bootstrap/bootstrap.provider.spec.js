@@ -11,7 +11,7 @@ ngDescribe({
     it('should return a bootstrap service instance', testInstantiateBootstrapService);
 
     function testConfigRegistration() {
-      // Having
+      // Given
       let task = () => deps.$q((resolve) => resolve());
       let bootstrapProvider = new BootstrapProvider();
 
@@ -23,7 +23,7 @@ ngDescribe({
     }
 
     function testInstantiateBootstrapService() {
-      // Having
+      // Given
       let bootstrapProvider = new BootstrapProvider();
 
       // When

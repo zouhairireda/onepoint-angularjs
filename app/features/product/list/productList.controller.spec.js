@@ -32,7 +32,7 @@ import '../product.module';
   it('should init controller with products', testInitWithProducts);
 
   function testInitWithProducts() {
-    // Having
+    // Given
     productService.setList([{id: 1}, {id: 2}, {id: 3}]);
 
     // When
@@ -54,7 +54,7 @@ ngDescribe({
     it('should init controller with products', testInitWithProducts);
 
     function testInitWithProducts() {
-      // Having
+      // Given
       deps.productService.setList([{id: 1}, {id: 2}, {id: 3}]);
 
       // When

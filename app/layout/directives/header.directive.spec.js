@@ -13,7 +13,7 @@ describe('shopping.layout: HeaderDirective', () => {
   }));
 
   it('should contain main menu', () => {
-    // having
+    // Given
     let template = angular.element('<header></header>');
 
     // when

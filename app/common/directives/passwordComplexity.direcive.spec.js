@@ -18,7 +18,7 @@ describe('shopping.directives.form: shopPasswordComplexityDirective', () => {
   it('should override default params', testOverrideDefaultParam);
 
   function testExceptionOnBadParam() {
-    // Having
+    // Given
     let template = angular.element('<input type="test" ng-model="test" shop-password-complexity="param">');
     scope.param = 'badparamtype';
 
@@ -30,7 +30,7 @@ describe('shopping.directives.form: shopPasswordComplexityDirective', () => {
   }
 
   function testOverrideDefaultParam() {
-    // Having
+    // Given
     let template = angular.element('<input type="test" ng-model="test" shop-password-complexity="params">');
     scope.params = {minLength: 1, shouldHaveNumber: true, shouldHaveSpecialChar: true};
 
