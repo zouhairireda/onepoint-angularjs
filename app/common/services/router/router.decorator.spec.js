@@ -5,7 +5,7 @@ ngDescribe({
   tests: function(deps) {
     it('should add reload option by default', testAddTimestampToDebug);
     function testAddTimestampToDebug() {
-      // Having
+      // Given
       let originalService = {go: (name, params, options) => [name, params, options]};
       let decorator = new RouterDecorator(originalService);
 

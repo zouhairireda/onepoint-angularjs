@@ -7,7 +7,7 @@ ngDescribe({
     it('should multiply by given factor', testMultiplyByFactor);
 
     function testMultiplyByFactor() {
-      // Having
+      // Given
       let multiplyFilter = deps.$filter('multiply');
 
       // When
