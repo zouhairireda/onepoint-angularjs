@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import '../features/security/security.module';
 import routes from './layout.route.js';
 import headerDirective from './directives/header.directive.js';

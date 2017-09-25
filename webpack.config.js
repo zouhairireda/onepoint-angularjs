@@ -15,9 +15,8 @@ module.exports = {
   },
 
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: 'app/index.tpl.html',
       inject: 'body',
@@ -30,17 +29,17 @@ module.exports = {
       'window.jQuery': 'jquery',
       'window.$': 'jquery'
     }),
-    new CopyWebpackPlugin([{from: 'assets/img', to: 'img'}], {})
+    new CopyWebpackPlugin([{from: 'assets/img', to: 'img'}], {}),
+    new CopyWebpackPlugin([{from: 'node_modules/bootstrap-sass/assets/fonts/bootstrap/', to: 'assets/fonts'}], {})
   ],
 
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader', query: {presets: ['es2015']}},
-      {test: /\.scss$/, loaders: ['style', 'css', 'sass']},
-      {test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000'},
-      {test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery'},
+      {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'},
+      {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
       {test: /\.html/, exclude: /node_modules/, loader: 'html-loader'},
-      {test: /\.(png|jpg|jpeg|gif)$/, loader: 'file-loader?name=assets/img/img-[hash:6].[ext]'}
+      {test: /\.(png|jpe?g|gif|svg|ico)$/, loader: 'file-loader?name=assets/[name].[hash].[ext]'},
+      {test: /\.(woff|woff2|ttf|eot)$/, loader: 'file-loader?name=assets/[name].[ext]'}
     ]
   }
 };
