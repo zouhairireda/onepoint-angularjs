@@ -50,7 +50,7 @@ class FormFieldController {
   }
 
   _registerUntouchedEvent() {
-    this.inputElement.on('click', () => {
+    this.inputElement.on('focus', () => {
       this.$scope.$apply(() => this.inputElement.controller('ngModel').$setUntouched());
     });
   }
