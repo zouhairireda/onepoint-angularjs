@@ -1,6 +1,6 @@
-import 'jquery';
-import 'bootstrap-loader';
 import './styles/app.scss';
+
+import 'jquery';
 import angular from 'angular';
 import './layout/layout.module.js';
 import './features/product/product.module.js';

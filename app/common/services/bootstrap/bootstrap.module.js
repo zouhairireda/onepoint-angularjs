@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import BootstrapProvider from './bootstrap.provider';
 
 angular.module('shopping.services.bootstrap', [])

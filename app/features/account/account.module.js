@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import '../security/security.module';
 import '../../common/services/bootstrap/bootstrap.module';
 import '../../common/directives/form.module';

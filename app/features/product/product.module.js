@@ -1,4 +1,4 @@
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import 'angular-resource';
 import angular from 'angular';
 
