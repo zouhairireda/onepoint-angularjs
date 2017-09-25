@@ -8,8 +8,8 @@ module.exports = (config) => {
     singleRun: false,
     logLevel: config.LOG_INFO,
     frameworks: ['jasmine'],
-    reporters: ['progress'],
-    browsers: ['PhantomJS'],
+    reporters: ['nyan'],
+    browsers: ['Chrome'],
     files: [
       'app/main.test.js'
     ],
