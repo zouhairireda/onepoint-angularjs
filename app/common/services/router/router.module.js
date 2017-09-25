@@ -1,5 +1,5 @@
 import angular from 'angular';
-import 'angular-ui-router';
+import '@uirouter/angularjs';
 import {configureRouterDecorator} from './router.decorator';
 
 angular.module('shopping.services.router', ['ui.router'])
