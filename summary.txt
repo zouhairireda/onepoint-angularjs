@@ -1,0 +1,59 @@
+Yarn alternative de npm : plus facile de gerer les fixes de version (.lock)
+> Npm : nouvelle alternative - package.lock
+
+Page 11 : hot replacement (ex: travail sur un formulaire et ne pas perdre son état à un changement)
+
+Page 14 : bonne pratique - ecrire des directives (meme pas reutilisable ailleurs)
+Page 15 : un composant à un template, une directive non
+$compile : transformer le composant en composant executable sur une page
+
+$onChange !!!!!! (récupérer ce qui a changé)
+
+
+point d'entrée webpack : main.js à la racine de app
+
+ES6 + import = pas besoin d'etre en view strict (fait auto)
+
+ui-view : gerer le gabari des pages (add form à droite ...)
+
+on peut pas faire compile dans un composant (pas acces à toute l'api de compile quando n fait un composant)
+
+composant : bindtocontroller auto
+scope pour bindings (<data > pas de modif sur data)
+
+bindings composant : scope isolé systematiquement
+3 types de scope : true (isolé), false(non isolé)
+
+debugger; (pour debugger js)
+
+TD1:
+
+export default () => ({
+  restrict: 'E',
+  template: productTemplate,
+  controller: ProductController,
+  controllerAs: 'prodCtl',
+  scope: { product: '<data' },
+  bindToController: true,
+  compile: compile
+});
+
+
+function compile(element, attrs) {
+  element.find('img').addClass(attrs['cssClass']);
+}
+
+
+
+TD2 : transclusion
+
+-------
+element.controller() (controleur courant)
+
+
+
+
+
+
+
+
