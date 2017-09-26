@@ -37,6 +37,9 @@ class FormFieldController {
     this.$transclude((clone) => {
       this.$element.find('div').append(clone);
       this.inputElement = this.$element.find('input');
+      this.inputElement.on('focus', () => {
+        this.$scope.$apply(() => this.inputElement.controller('ngModel').$setUntouched());
+      });
       if (!this.inputElement.length) {
         throw new Error('No input element provided in directive body');
       }
